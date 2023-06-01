@@ -21,12 +21,11 @@ spec:
             git checkout {{ $.Values.spawner.agnosticd.branch }}
             cd ..
             git clone {{ $.Values.spawner.catalogitem.repoUrl }}
-            mkdir -p {{ $.Values.spawner.catalogitem.path }}/ansible
             cd {{ $.Values.spawner.catalogitem.path }}
-            cp -r ../agnosticd/ansible/roles ansible
-            cp -r ../agnosticd/ansible/roles_ocp_workloads ansible
-            cp -r ../agnosticd/ansible/lookup_plugins ansible
-            cp ../agnosticd/ansible.cfg .
+            cp -r ../../agnosticd/ansible/roles .
+            cp -r ../../agnosticd/ansible/roles_ocp_workloads .
+            cp -r ../../agnosticd/ansible/lookup_plugins .
+            cp ../../agnosticd/ansible.cfg .
             ls -a
             ansible-playbook -i localhost site.yaml -e "ACTION=create"
         image: quay.io/agnosticd/ee-multicloud:latest
