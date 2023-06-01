@@ -1,0 +1,6 @@
+spawner:
+  agnosticd:
+    repoUrl: https://github.com/redhat-cop/agnosticd.git
+    branch: development
+  catalogitems:
+    repoUrl: https://github.com/treddy08/rhdp-catalog-items.git
