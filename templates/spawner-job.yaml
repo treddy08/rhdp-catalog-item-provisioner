@@ -21,12 +21,8 @@ spec:
             git checkout {{ $.Values.spawner.agnosticd.branch }}
             cd ..
             git clone {{ $.Values.spawner.catalogitem.repoUrl }}
-            cd {{ $.Values.spawner.catalogitem.path }}
-            cp -r ../../agnosticd/ansible/roles .
-            cp -r ../../agnosticd/ansible/roles_ocp_workloads .
-            cp -r ../../agnosticd/ansible/lookup_plugins .
-            cp ../../agnosticd/ansible.cfg .
-            ls -a
+            cp -r {{ $.Values.spawner.catalogitem.path }}/* agnosticd/ansible
+            cd agnosticd/ansible
             ansible-playbook -i localhost site.yaml -e "ACTION=create"
         image: quay.io/agnosticd/ee-multicloud:latest
       restartPolicy: Never
