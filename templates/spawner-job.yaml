@@ -1,8 +1,4 @@
-{{- if not $.Values.spawner.guid -}}
-{{- $tempGuid := randAlphaNum 5 -}}
-{{- else -}}
-{{- $tempGuid := $.Values.spawner.guid -}}
-{{- end -}}
+{{- $tempGuid := $.Values.spawner.guid | default randAlphaNum 5 -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
