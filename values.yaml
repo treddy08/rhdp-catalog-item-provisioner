@@ -4,4 +4,4 @@ spawner:
     branch: development
   catalogitem:
     repoUrl: https://github.com/treddy08/rhdp-catalog-items.git
-    name: rhacs_multiuser_workshop_base_architecture
+    path: rhdp-catalog-items/rhacs_multiuser_workshop_base_architecture
