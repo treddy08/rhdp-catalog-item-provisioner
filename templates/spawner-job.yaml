@@ -1,4 +1,4 @@
-{{- $tempGuid = randAlphaNum 5 }}
+{{- $tempGuid = randAlphaNum 5 -}}
 apiVersion: batch/v1
 kind: Job
 metadata:
