@@ -1,4 +1,5 @@
 spawner:
+  guid: ''
   agnosticd:
     repoUrl: https://github.com/redhat-cop/agnosticd.git
     branch: development
