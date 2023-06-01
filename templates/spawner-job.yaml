@@ -24,7 +24,7 @@ spec:
             git clone {{ $.Values.spawner.catalogitem.repoUrl }}
             cp -r {{ $.Values.spawner.catalogitem.path }}/* agnosticd/ansible
             cd agnosticd/ansible
-            GUID={{ $.Values.spawner.guid | default $tempGuid }}
+            GUID={{ $.Values.spawner.guid }}
             ansible-playbook -i localhost site.yaml -e "ACTION=create" -e $GUID
         image: quay.io/agnosticd/ee-multicloud:latest
       restartPolicy: Never
