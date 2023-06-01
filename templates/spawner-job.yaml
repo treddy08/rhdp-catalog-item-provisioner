@@ -24,7 +24,7 @@ spec:
             cp -r agnosticd/ansible/roles {{ $.Values.spawner.catalogitem.name }}
             cp -r agnosticd/ansible/roles_ocp_workloads {{ $.Values.spawner.catalogitem.name }}
             cp -r agnosticd/ansible/lookup_plugins {{ $.Values.spawner.catalogitem.name }}
-            cp agnosticd/ansible.cfg r{{ $.Values.spawner.catalogitem.name }}
+            cp agnosticd/ansible.cfg {{ $.Values.spawner.catalogitem.name }}
             cd {{ $.Values.spawner.catalogitem.name }}
             ls -a
             ansible-playbook -i localhost site.yaml -e "ACTION=create"
