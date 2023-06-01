@@ -25,7 +25,7 @@ spec:
             cp -r {{ $.Values.spawner.catalogitem.path }}/* agnosticd/ansible
             cd agnosticd/ansible
             GUID={{ $.Values.spawner.guid | default $tempGuid }}
-            ansible-playbook -i localhost site.yaml -e "ACTION=create" -e $GUID
+            ansible-playbook -i localhost site.yaml -e "ACTION=create" -e "guid=$GUID"
         image: quay.io/agnosticd/ee-multicloud:latest
       restartPolicy: Never
       serviceAccount: spawner-runner
